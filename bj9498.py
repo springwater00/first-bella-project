@@ -1,4 +1,4 @@
-score = 90
+score = 60
 
 
 if score >=90:
