@@ -5,6 +5,13 @@ from selenium.webdriver.common.keys import Keys
 from notion.client import NotionClient
 
 
+"""
+I want to upload my crawling bible context in Notion new page automatically, but Notion doesn't provide this survice yet. 
+(Uploading files and media via the Notion API -> The API currently does not support uploading new files.)
+If there's someone who can upload this, please reply to me.
+
+"""
+
 res = req.urlopen('https://sum.su.or.kr:8888/bible/today')
 soup = BeautifulSoup( res, 'html.parser' )
 
@@ -17,15 +24,16 @@ todaytext = today.get_text().strip()
 tb = catetext + titletext + todaytext
 print(tb)
 
-token = 'secret_xGd3IiwH49f7WjifZ1Nrh41THl6OWGOnab5WygiSVFJ'
-client = NotionClient(token_v2="d9e9fcd9b4d6bdfed5de7b3ec0cd2bd317e98be0f662eedce8335ce846e4582d721698922933a0e97299415ef47586ac8d77822ecb21c485a628f0a2131d2fd08effbb1f45562be254105794b5d2")
-list_url = 'https://www.notion.so/589edbc068ef47aaba801950826555d9?v=55ad36c284754ef28c6a062257f71939'
-collection_view = client.get_collection_view(list_url)
-new_row = collection_view.collection.add_row()
 
+# token = 'secret_xGd3IiwH49f7WjifZ1Nrh41THl6OWGOnab5WygiSVFJ'
+# client = NotionClient(token_v2="d9e9fcd9b4d6bdfed5de7b3ec0cd2bd317e98be0f662eedce8335ce846e4582d721698922933a0e97299415ef47586ac8d77822ecb21c485a628f0a2131d2fd08effbb1f45562be254105794b5d2")
+# list_url = 'https://www.notion.so/589edbc068ef47aaba801950826555d9?v=55ad36c284754ef28c6a062257f71939'
+# collection_view = client.get_collection_view(list_url)
+# new_row = collection_view.collection.add_row()
 
 # page = client.get_block("https://www.notion.so/05b5521b16dc48b6abbb30b3273291a4?v=8576a9db79da4d958a520b73d6253405")
 # print("The Notion title is:", page.title)
+
 
 
 # send = req.urlopen('https://www.notion.so/2171dd5a65174e19b2436184fb0974cb?v=4ff00f2795a345b0a49df2535bda80b0')
